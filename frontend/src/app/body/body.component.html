@@ -1,9 +1,11 @@
 <div class="body">
-
-    <div class="artista">
-          <div  *ngFor="let sandia of artista">
-            {{sandia.name}}
-            <img id="Foto" src="{{sandia.foto}}">
+  <b class="top"> Top Artistas</b>
+    <tr>
+    <div class="bloque">
+          <div class="artista" *ngFor="let sandia of artista">
+           <th>  {{sandia.name}} </th>
+          <th> <img id="Foto" src="{{sandia.foto}}"> </th>
           </div>
   </div>
+</tr>
 </div>
