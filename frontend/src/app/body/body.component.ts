@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Artista } from '../artista';
+import { ArtistaService } from '../artistas.service';
 
 @Component({
   selector: 'app-body',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./body.component.scss']
 })
 export class BodyComponent implements OnInit {
+  artista:Artista[]= [];
+  constructor(private artistas:ArtistaService) {
 
-  constructor() { }
+   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {this.artistas.getArtistas().subscribe(data=>{
+    this.artista=data
+  })
   }
 
 }

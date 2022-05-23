@@ -1,4 +1,16 @@
 .body{
-    height: 90%;
+
     background-color: rgb(215, 214, 214);
+}
+#Foto
+{
+  display:flex;
+  border-radius:30px;
+  padding: 10px;
+}
+.artista
+{
+  display:flex;
+  max-width: 50%;
+ 
 }
