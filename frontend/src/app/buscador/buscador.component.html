@@ -10,6 +10,7 @@
         <button type="submit" class="btnBuscar" mat-raised-button color="Black" (click)="getDatos()">Buscar</button>
        </form>
       </div>
+  <div class="res1">
 
      <div  class='resultado' *ngFor="let music of musica ">
       <br>
@@ -19,11 +20,9 @@
       <br>
      <audio style="margin-bottom: 3px" [src]="[music.preview]" controls="controls" type="audio/mpeg" preload="preload"></audio>
      <br>
-     <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
 
-    </button>
     </div>
-
+  </div>
 
     <img id='like'src="https://i.pinimg.com/originals/b5/c2/2e/b5c22ea9eb7e255e699f67b9fd480097.gif">
 

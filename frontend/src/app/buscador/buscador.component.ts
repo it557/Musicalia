@@ -11,7 +11,7 @@ export class BuscadorComponent implements OnInit {
 
 musica:any[]= [];
 
-palabra:any='anuel'
+palabra:any='morat'
 form: FormGroup;
 
   constructor(private buscador:MusicaService  ,private fb: FormBuilder )
