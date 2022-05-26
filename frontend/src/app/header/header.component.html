@@ -1,7 +1,7 @@
 <header class="header">
 
 <div class="left" >
-  <img  id='icono'src="https://cdn-icons-png.flaticon.com/512/181/181668.png">
+  <a class="icono"routerLink="/body"> <img  id='icono'src="https://cdn-icons-png.flaticon.com/512/181/181668.png"></a>
   <p class="titulo" style="margin-left: 80%;"> Musicalia</p>
 
 
@@ -10,7 +10,8 @@
 
   <button style="margin-left:auto; font-size: 2rem;" mat-button [matMenuTriggerFor]="menu">Menú</button>
   <mat-menu #menu="matMenu">
-  <button mat-menu-item>Favoritos</button>
+  <button mat-menu-item routerLink="/buscador">Buscador</button>
+  <button mat-menu-item routerLink="/favoritos">Favoritos</button>
   <button mat-menu-item>Radio</button>
 </mat-menu>
 </div>

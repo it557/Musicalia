@@ -17,5 +17,6 @@ export class BodyComponent implements OnInit {
     this.artista=data
   })
   }
+  
 
 }

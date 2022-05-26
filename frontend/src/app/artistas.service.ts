@@ -20,9 +20,11 @@ export class ArtistaService {
 
   getArtistas(): Observable<Artista[]> {
 
-    return this.http.get<Artista[]>(this.ArtistaesUrl);
+    return this.http.get<Artista[]>(this.ArtistaesUrl,this.httpOptions); //AQUI SE PONE LO DE LA URL + HEADERS
 
   }
+
+  
 
 
 

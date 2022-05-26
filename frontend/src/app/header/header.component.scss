@@ -18,13 +18,21 @@
 
 }
 #icono{
-    width: 10%;
+    width: 70px;
     background-color: rgb(255, 255, 255);
     border-radius: 100%;
     display: flex;
     align-items: center;
     padding: 1px;
 
+}
+.icono{
+  width: 5000px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1px;
 }
 .left{
     width: 50%;

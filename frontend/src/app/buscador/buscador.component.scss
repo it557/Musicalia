@@ -1,0 +1,70 @@
+.buscador{
+  background-image: url("https://cdn.wallpapersafari.com/36/26/LOwgY8.jpg");
+  background-size: 100%;
+  height: auto;
+  min-height: 88%;
+}
+.titulo{
+  color:white
+}
+.buscar{
+  padding-top: 10px;
+  text-align: center;
+  padding-left: 3vh;
+}
+.ancho{
+  width: 50vh;
+
+}
+  .btnBuscar
+{
+    font-weight: lighter;
+    height: 37px;
+    margin-left: 4px;
+}
+.insertar{
+  padding-right: 25px;
+}
+.resultado{
+  display:flex;
+  color: rgb(255, 255, 255);
+  max-width: 30%;
+  background-color: rgb(0, 0, 0);
+ justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  font-size: 25px;
+  margin-left: 35%;
+  border: solid;
+  text-align: center;
+}
+
+#picture{
+  display:flex;
+  border-radius:50px;
+  padding: 10px;
+  width: 350px;
+  margin: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 20px;
+  max-width: 100%;
+  background: #ffffff85;
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-right-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+.resultado:hover{
+
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-15px);
+
+}
+
+#like{
+  width: 20px;
+}
+
