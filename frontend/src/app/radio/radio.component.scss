@@ -1,37 +1,21 @@
-.buscador{
-  background-image: url("https://cdn.wallpapersafari.com/36/26/LOwgY8.jpg");
-  background-size: 100%;
-
-  min-height: 88%;
-}
-.titulo{
-  color:white
-}
-.buscar{
-  padding-top: 10px;
-  text-align: center;
-  padding-left: 3vh;
-
-}
-.ancho{
-  width: 50vh;
-  height: 4vh;
-
-}
-  .btnBuscar
+.radio
 {
-    font-weight: lighter;
-    height: 40px;
-    width: 50x;
-    margin-left: 4px;
+  background-color: rgb(215, 214, 214);
+  min-height: 88vh;
+
 }
-.insertar{
-  padding-right: 25px;
+.textoRadio
+{
+  font-family: fantasy;
+  font-size: 30px;
+  padding: 30px;
+  margin-left:3.2%;
 }
-.resultado{
+
+
+.cadenaser{
   display:flex;
   color: rgb(255, 255, 255);
-  max-width: 30%;
   background-color: rgb(0, 0, 0);
   justify-content: center;
   flex-direction: column;
@@ -41,25 +25,55 @@
   border: solid;
   text-align: center;
   align-items: center;
-
 }
-.res1{
+
+
+.los40c{
+  display:flex;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  font-size: 23px;
+  margin: 15px;
+  border: solid;
+  text-align: center;
+  align-items: center;
+}
+
+
+.hitfm{
+  display:flex;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  font-size: 23px;
+  margin: 15px;
+  border: solid;
+  text-align: center;
+  align-items: center;
+}
+
+ .lRadio{
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
+  
 
 }
-
-#picture{
+#fot{
   display:flex;
   border-radius:50px;
   padding: 10px;
+  height: 100%;
   width: 350px;
   margin: 25px;
   padding-left: 15px;
   padding-right: 15px;
-  border-radius: 20px;
+  border-radius: 50px;
   max-width: 100%;
   background: #ffffff85;
   backdrop-filter: blur(2px);
@@ -68,25 +82,9 @@
   border-bottom-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
 }
-#picture:hover{
+#fot:hover{
 
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
     transform: translateY(-10px);
 
 }
-
-.heart{
-  margin:8px;
-  border-radius: 90px;
-
-}
-.like{
-
-  justify-content: center;
-  text-align: center;
-  flex-direction: row;
-  margin-top: 10px;
-  margin-bottom: 15px;
-}
-
-

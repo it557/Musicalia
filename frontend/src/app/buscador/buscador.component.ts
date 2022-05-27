@@ -11,10 +11,10 @@ export class BuscadorComponent implements OnInit {
 
 musica:any[]= [];
 
-palabra:any='morat'
-form: FormGroup;
+palabra:any="Ctangana"
 
-  constructor(private buscador:MusicaService  ,private fb: FormBuilder )
+
+  constructor(private buscador:MusicaService )
   {
     this.buscador.getsearch(this.palabra).subscribe(data=>{
       console.log(data)
@@ -22,18 +22,14 @@ form: FormGroup;
 
     })
 
-    this.form=this.fb.group({
-      busqueda:['', Validators.required],
-
-    });
   }
 
-  getDatos()
+  getDatos(search :string)
   {
 
     //this.musica=[];
-    this.palabra=this.form;
-
+    this.palabra=search;
+    alert(this.palabra)
 
   }
 

@@ -1,29 +1,32 @@
 <div class="buscador">
   <div class='buscar'>
 
-     <h1 class="titulo">Busca tus canciones,artistas...</h1>
-     <form [formGroup]="form" (ngSubmit)="getDatos()">
-      <mat-form-field class="ancho" appearance="fill">
-          <mat-label>Busqueda</mat-label>
-          <input type="text"  matInput autocomplete="on" formControlName="busqueda">
-        </mat-form-field>
-        <button type="submit" class="btnBuscar" mat-raised-button color="Black" (click)="getDatos()">Buscar</button>
-       </form>
+      <h1 class="titulo">Busca tus canciones,artistas...</h1>
+        <input type="text" class="ancho"  matInput autocomplete="off" formControlName="busqueda" #search>
+        <button type="submit" class="btnBuscar" mat-raised-button color="Black" (click)="getDatos(search.value)">Buscar</button>
+
       </div>
   <div class="res1">
 
      <div  class='resultado' *ngFor="let music of musica ">
       <br>
-        {{music['title']}}
-      <br>
+        <p class="titBusqueda"> {{music['title']}}</p>
+
      <img id='picture' [src]="[music.artist.picture_medium]">
       <br>
-     <audio style="margin-bottom: 3px" [src]="[music.preview]" controls="controls" type="audio/mpeg" preload="preload"></audio>
-     <br>
+     <audio style="margin-bottom: 10px;" [src]="[music.preview]" controls="controls" type="audio/mpeg" preload="preload"></audio>
+     <div>
+      <div class="like">
+        Añadir a favoritos
+        <button class="heart" mat-fab color="warn" aria-label="Example icon button with a home icon">
+          <mat-icon >favorite</mat-icon>
+        </button>
+    </div>
 
     </div>
+
   </div>
 
-    <img id='like'src="https://i.pinimg.com/originals/b5/c2/2e/b5c22ea9eb7e255e699f67b9fd480097.gif">
+
 
 </div>

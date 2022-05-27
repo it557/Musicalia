@@ -16,6 +16,8 @@ import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { BuscadorComponent } from './buscador/buscador.component';
+import {MatIconModule} from '@angular/material/icon';
+import { RadioComponent } from './radio/radio.component';
 
 
 
@@ -28,7 +30,8 @@ import { BuscadorComponent } from './buscador/buscador.component';
     BodyComponent,
     BuscadorComponent,
     FavoritosComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    RadioComponent
 
   ],
   imports: [
@@ -40,7 +43,8 @@ import { BuscadorComponent } from './buscador/buscador.component';
     AppRoutingModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
