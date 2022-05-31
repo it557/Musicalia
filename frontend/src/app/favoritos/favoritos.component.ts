@@ -16,24 +16,35 @@ export class FavoritosComponent implements OnInit {
 
     this.miapi.getsearch().subscribe(data=>
       {
+        console.log(data)
          for(let song of data._embedded.songs )
             {
-              this.musica.getsong(song.idsong).subscribe(datasong=>{this.songs.push(datasong)
+
+              this.musica.getsong(song.idsong).subscribe(datasong=>{
+              datasong.custom=song._links
+               this.songs.push(datasong)
                 console.log(datasong)
+
               });
 
             }
     })
   }
 
-  removesong(id:number){
-    this.miapi.removeSong(id).subscribe();
+  removesong(url:string){
+
+    if (confirm("¿Estas seguro que deseas eliminar la cancion?")){
+      this.miapi.removeSong(url).subscribe();
+      window.location.reload();
+    }
+
     this.aviso();
   }
 
 
+
   aviso(){
-    this._snackBar.open('La canción se ha eliminado de tu lista de favoritos', 'BOT',{duration: 0.1 , horizontalPosition:'center'})
+    this._snackBar.open('La canción se ha eliminado de tu lista de favoritos', 'BOT',{duration: 200 , horizontalPosition:'center'})
   }
   ngOnInit(): void {
   }

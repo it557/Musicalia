@@ -23,17 +23,24 @@ likesong:any[]=[];
       this.likesong=data._embedded.songs
     })
   }
-
+ next:string |undefined;
   getDatos(search:string)
   {
-
     this.musica=[];
     this.palabra=search;
     this.buscador.getsearch(this.palabra).subscribe(data=>{
-      console.log(data)
+      console.log(data.next)
+      this.next=data.next;
       this.musica=data.data;})
 
   }
+  /*
+  loadmore(url:string){
+    this.miapi.addmore(url).subscribe(data=>{
+      this.musica.push(data)
+    })
+
+  }*/
   savedata(id:number){  //Esta funcion guarda los datos en mi array (favoritos)
     this.aviso();
     console.log(id)

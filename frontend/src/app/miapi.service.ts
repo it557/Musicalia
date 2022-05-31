@@ -9,7 +9,8 @@ export class MiapiService {
   private MiapiUrl = 'http://localhost:8080'; //URL DE MI API
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Accept': '*/*'
 
     }),
   }; //headers
@@ -23,8 +24,11 @@ export class MiapiService {
 
     return this.http.post<any>(this.MiapiUrl + '/songs' ,{"idsong":idsong},this.httpOptions); //LA CANCION ES LO Q TU PASAS POR PARAMETRO , EL SEARCH ES LO Q SE USA
   }
-  removeSong(idsong: number) {
+  removeSong(url: string) {
 
-    return this.http.delete<any>(this.MiapiUrl +'/songs/'+idsong ,this.httpOptions);
+    return this.http.delete<any>(url ,this.httpOptions);
   }
+  /*addmore(url:string){                  No funciona porque hay que pagar
+    return this.http.get<any>(url);
+  }*/
 }

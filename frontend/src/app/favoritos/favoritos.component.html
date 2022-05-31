@@ -1,64 +1,52 @@
-<div class="favoritos">
+<div class="favoritos" *ngIf="songs.length==0">
+    <div class="cent">
+       <img id="ops" src="https://reygif.com/media/4/oops-57342.gif"> <br> <p class="tops" >Aun no tienes nada</p>
 
-                   <p class="textos">Tu lista favorita:</p>
+      <img id="anadir" title="Añadir canción" routerLink="/buscador" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEHjeoZtFhyid9Yvg7vj-SzdB1HVfk6ukLEA&usqp=CAU"/>
+    </div>
 
-                  <div class="res1">
+</div>
 
-                    <div  class='resultado' *ngFor="let song of songs">
-                        <div class="left">
+<div class="favoritos" *ngIf="songs.length!=0">
 
-                                <br>
-                                <p class="titSong"> {{song['title']}}</p>
-                                <img id='picture' [src]="[song.album.cover_medium]">
+  <p class="textos">Tu lista favorita:</p>
 
-                                <audio style="margin-bottom: 10px;" [src]="[song.preview]" controls="controls" type="audio/mpeg" preload="preload"></audio>
+  <div class="res1">
+    <div class="resultado" *ngFor="let song of songs">
+      <div class="left">
+        <br />
+        <p class="titSong">{{ song["title"] }}</p>
+        <img id="picture" [src]="[song.album.cover_medium]" />
 
-                         </div>
+        <audio
+          style="margin-bottom: 10px"
+          [src]="[song.preview]"
+          controls="controls"
+          type="audio/mpeg"
+          preload="preload"
+        ></audio>
+      </div>
 
-                        <div class="right">
+      <div class="right">
+        <b class="content"> Caracteristicas:</b>
+        <br />
+        <br />
+        <p class="a">Fecha de salida:</p>
 
-                                <b class="content"> Caracteristicas:</b>
-                                <br>
-                                <br>
-                                <p class="a" >Fecha de salida:</p>
+        <p class="b">{{ song["release_date"] }}</p>
 
-                                  <p class="b"> {{song['release_date']}}</p>
+        <p class="a">Duración:</p>
 
-                                <p class="a">Duración: </p>
+        <p class="b">{{ song["duration"] }} segundos</p>
 
-                                  <p class="b">{{song['duration']}} segundos </p>
-
-                                <br>
-                               <p class="a">Nombre del artista: </p>
-
-                                <p class="b">{{song['artist.name']}} </p>
-
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                               <img id="remove" (click)="aviso()" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtuhhKk1WbEP5CZZbOzIh4NBPRY_8wh4BMWg&usqp=CAU">
-
-
-                        </div>
-
-
-                   </div>
-
-         </div>
-
-
-
-
-
-
-
+        <br />
+        <p class="a">Nombre del artista:</p>
+        <p class="b">{{ song["artist"]["name"] }}</p>
+        <img
+          id="remove"
+          (click)="removesong(song.custom.self.href)"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtuhhKk1WbEP5CZZbOzIh4NBPRY_8wh4BMWg&usqp=CAU"/>
+      </div>
+    </div>
+  </div>
 </div>
