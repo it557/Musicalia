@@ -1,12 +1,133 @@
-.favoritos
-{
-  background-color: rgb(215, 214, 214);
-  min-height: 88vh;
-}
-.textos
+.textos  //Texto de la página
 {
   font-family: fantasy;
   font-size: 30px;
   padding: 30px;
   margin-left:20px;
 }
+.titSong{     //Titulo de la cancion
+  margin-top: 1vh;
+  justify-content: center;
+  display:flex;
+
+}
+
+
+.favoritos{
+  background-color: rgb(215, 214, 214);
+  //background-image: url("https://cdn.wallpapersafari.com/36/26/LOwgY8.jpg");
+  background-size: 100%;
+  min-height: 88vh;
+}
+
+.left{ //container de la izquierda (negro)
+  display:flex;
+  flex-direction: column;
+  border-radius: 30px;
+
+
+}
+.right{  //Container de la derecha (gris)
+
+  display:flex;
+  flex-direction: column;
+  background-color: rgb(63, 63, 63);
+  min-height: 100%;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin-bottom: 0px;
+
+}
+.btn{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtuhhKk1WbEP5CZZbOzIh4NBPRY_8wh4BMWg&usqp=CAU");
+  height: 70%;
+}
+
+.content{    //texto del contenedor right
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  text-decoration: dotted;
+  font-size: 140%;
+  padding: 15px;
+}
+.a{   //Texto Informante
+  display:flex;
+  align-items: baseline;
+  margin-left: 20px;
+  font-family: georgia;
+}
+.b{   //Texto con respuesta
+  display:flex;
+  justify-content: center;
+  color:azure;
+}
+
+#remove  //Icono del contenedor
+{ display: flex;
+  flex-direction:row-reverse;
+  width: 55px;
+  height: 55px;
+ border-radius: 51px;
+ margin-bottom: 10px;
+ cursor: pointer;
+margin-left: 10px;
+}
+
+
+.resultado{  //Carta
+  display:flex;
+  color: rgb(255, 255, 255);
+  max-width: 55%;
+  background-color: rgb(0, 0, 0);
+  justify-content: center;
+  border-radius: 30px;
+  font-size: 23px;
+  margin: 15px;
+  border: solid;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+.res1{    //Conjunto de cartas
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+#picture{     //Imagen
+  display:flex;
+  border-radius:50px;
+  padding: 10px;
+  width: 350px;
+  margin: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 20px;
+  max-width: 75%;
+  min-width: 60%;
+  background: #ffffff85;
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-right-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+#picture:hover{
+
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+
+}
+audio   //Reproductor de audio
+{
+width: 320px;
+margin-left: 25px;
+margin-top: 10px;
+}
+
+
+

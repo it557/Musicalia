@@ -1,6 +1,64 @@
 <div class="favoritos">
 
-  <p class="textos">Tu lista favorita:</p>
+                   <p class="textos">Tu lista favorita:</p>
+
+                  <div class="res1">
+
+                    <div  class='resultado' *ngFor="let song of songs">
+                        <div class="left">
+
+                                <br>
+                                <p class="titSong"> {{song['title']}}</p>
+                                <img id='picture' [src]="[song.album.cover_medium]">
+
+                                <audio style="margin-bottom: 10px;" [src]="[song.preview]" controls="controls" type="audio/mpeg" preload="preload"></audio>
+
+                         </div>
+
+                        <div class="right">
+
+                                <b class="content"> Caracteristicas:</b>
+                                <br>
+                                <br>
+                                <p class="a" >Fecha de salida:</p>
+
+                                  <p class="b"> {{song['release_date']}}</p>
+
+                                <p class="a">Duración: </p>
+
+                                  <p class="b">{{song['duration']}} segundos </p>
+
+                                <br>
+                               <p class="a">Nombre del artista: </p>
+
+                                <p class="b">{{song['artist.name']}} </p>
+
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                               <img id="remove" (click)="aviso()" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtuhhKk1WbEP5CZZbOzIh4NBPRY_8wh4BMWg&usqp=CAU">
+
+
+                        </div>
+
+
+                   </div>
+
+         </div>
+
+
+
+
+
 
 
 </div>

@@ -18,7 +18,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { BuscadorComponent } from './buscador/buscador.component';
 import {MatIconModule} from '@angular/material/icon';
 import { RadioComponent } from './radio/radio.component';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -44,7 +44,8 @@ import { RadioComponent } from './radio/radio.component';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,4 +20,9 @@ export class MusicaService {
   getsearch(parametro: string): Observable<any> {
     return this.http.get<any>(this.MusicaesUrl + 'search?q=' + parametro,this.httpOptions); //LA CANCION ES LO Q TU PASAS POR PARAMETRO , EL SEARCH ES LO Q SE USA
   }
+
+  getsong(parametro: number): Observable<any> {
+    return this.http.get<any>(this.MusicaesUrl + 'track/' + parametro,this.httpOptions); //LA CANCION ES LO Q TU PASAS POR PARAMETRO , EL SEARCH ES LO Q SE USA
+  }
+
 }

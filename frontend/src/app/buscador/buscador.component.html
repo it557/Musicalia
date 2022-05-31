@@ -2,30 +2,29 @@
   <div class='buscar'>
 
       <h1 class="titulo">Busca tus canciones,artistas...</h1>
-        <input type="text" class="ancho"  matInput autocomplete="off" formControlName="busqueda" #search>
-        <button type="submit" class="btnBuscar" mat-raised-button color="Black" (click)="getDatos(search.value)">Buscar</button>
-
-      </div>
-  <div class="res1">
-
-     <div  class='resultado' *ngFor="let music of musica ">
-      <br>
-        <p class="titBusqueda"> {{music['title']}}</p>
-
-     <img id='picture' [src]="[music.artist.picture_medium]">
-      <br>
-     <audio style="margin-bottom: 10px;" [src]="[music.preview]" controls="controls" type="audio/mpeg" preload="preload"></audio>
-     <div>
-      <div class="like">
-        Añadir a favoritos
-        <button class="heart" mat-fab color="warn" aria-label="Example icon button with a home icon">
-          <mat-icon >favorite</mat-icon>
-        </button>
-    </div>
-
-    </div>
+      <input type="text" class="ancho"  matInput autocomplete="off"  #search>
+      <button type="submit" class="btnBuscar" mat-raised-button color="Black" (click)="getDatos(search.value)">Buscar</button>
 
   </div>
+              <div class="res1">
+
+                         <div  class='resultado' *ngFor="let music of musica ">
+                                <br>
+                                <p class="titBusqueda"> {{music['title']}}</p>
+                                <img id='picture' [src]="[music.album.cover_medium]">
+                                <br>
+                               <audio style="margin-bottom: 10px;" [src]="[music.preview]" controls="controls" type="audio/mpeg" preload="preload"></audio>
+
+                                <div *ngIf="comprobar(music.id)" class="like">
+                                      Añadir a favoritos
+                                      <button class="heart" mat-fab color="warn"  (click)="savedata(music.id)">
+                                        <mat-icon >favorite</mat-icon>
+                                      </button>
+                                </div>
+
+                        </div>
+
+              </div>
 
 
 

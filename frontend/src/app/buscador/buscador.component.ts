@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MiapiService } from '../miapi.service';
 import { MusicaService } from '../musica.service';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-buscador',
   templateUrl: './buscador.component.html',
@@ -11,30 +11,56 @@ export class BuscadorComponent implements OnInit {
 
 musica:any[]= [];
 
-palabra:any="Ctangana"
+palabra:any;
+
+likesong:any[]=[];
 
 
-  constructor(private buscador:MusicaService )
+
+  constructor(private buscador:MusicaService ,private miapi:MiapiService,private _snackBar: MatSnackBar) //INYECCION DE DEPENDENCIA
   {
+    this.miapi.getsearch().subscribe(data=>{
+      this.likesong=data._embedded.songs
+    })
+  }
+
+  getDatos(search:string)
+  {
+
+    this.musica=[];
+    this.palabra=search;
     this.buscador.getsearch(this.palabra).subscribe(data=>{
       console.log(data)
-      this.musica=data.data;
+      this.musica=data.data;})
 
+  }
+  savedata(id:number){  //Esta funcion guarda los datos en mi array (favoritos)
+    this.aviso();
+    console.log(id)
+    this.miapi.addSong(id).subscribe();
+    this.miapi.getsearch().subscribe(data=>{
+      this.likesong=data._embedded.songs
     })
+    this.getDatos(this.palabra);
 
   }
 
-  getDatos(search :string)
-  {
 
-    //this.musica=[];
-    this.palabra=search;
-    alert(this.palabra)
+  comprobar(idsong:number){   //Método creado para comprobar si ya existe una canción con la misma id
+    for(let music of this.likesong)
+    {
+      if(music.idsong==idsong)
+        {
+          return false;
+        }
 
+    }
+          return true;
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
+  aviso(){
+    this._snackBar.open('La canción se ha añadido a favoritos', 'BOT',{duration: 2000, horizontalPosition:'center'})
   }
-
 }

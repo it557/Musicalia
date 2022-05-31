@@ -22,4 +22,5 @@ describe('BuscadorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });
