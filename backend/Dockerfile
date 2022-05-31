@@ -1,4 +1,4 @@
-FROM openjdk:11 as build
+FROM openjdk:17 as build
 WORKDIR /workspace/app
 
 COPY mvnw .
