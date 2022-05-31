@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./frontend
+    platform: linux/amd64
+    restart: always
+    ports: 
+      - '8080:80'
+  backend:
+    build: ./backend
+    platform: linux/amd64
+    restart: always
+    ports: 
+      - '8081:8081'
+    depends_on:
+      - db
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local
