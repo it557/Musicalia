@@ -8,6 +8,6 @@ COPY src src
 
 RUN sh mvnw install -DskipTests
 
-EXPOSE 8081
+EXPOSE 8080
 
 CMD ["java", "-jar", "target/demo-0.0.1-SNAPSHOT.jar"]

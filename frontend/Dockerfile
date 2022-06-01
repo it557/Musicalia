@@ -16,3 +16,5 @@ RUN npm run build --prod
 FROM nginx:1.21.6
 
 COPY --from=build-step /app/dist/personal-proyect /usr/share/nginx/html
+
+EXPOSE 80
