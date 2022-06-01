@@ -15,8 +15,7 @@ export class ArtistaService {
   };
 
 
-  constructor(
-    private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getArtistas(): Observable<Artista[]> {
 
@@ -24,7 +23,7 @@ export class ArtistaService {
 
   }
 
-  
+
 
 
 
