@@ -15,4 +15,4 @@ RUN npm run build --prod
 #Para levantarlo en la web
 FROM nginx:1.21.6
 
-COPY --from=build-step /app/dist/musicalia /usr/share/nginx/html
+COPY --from=build-step /app/dist/personal-proyect /usr/share/nginx/html
